@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sayt{% endblock %}</title>
+    <style>
+        body { background-color: grey; font-family: Arial, sans-serif; }
+        nav { text-align: right; padding: 10px; }
+        nav a { color: white; text-decoration: none; font-size: 18px; margin: 0 10px; }
+        footer { text-align: center; padding: 20px; color: white; }
+    </style>
+</head>
+<body>
+    <header>
+<nav>
+    <a href="{% url 'home:home' %}">Bosh sahifa</a> |
+    {% if user.is_authenticated %}
+        <span>Salom, {{ user.first_name }}!</span> |
+        <form action="{% url 'home:logout' %}" method="post" style="display: inline;">
+            {% csrf_token %}
+            <button type="submit">">Chiqish</button>
+        </form>
+    {% else %}
+        <a href="{% url 'home:login' %}">Kirish</a> |
+        <a href="{% url 'home:register' %}">Ro‘yxatdan o‘tish</a>
+    {% endif %}
+</nav>
+
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>© 2025 Barcha huquqlar himoyalangan</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,93 @@
+{% load static %}
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Detail</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <style>
+.logout-container {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.logout-button {
+    background: red;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.logout-button:hover {
+    background: darkred;
+}
+
+    </style>
+</head>
+<body>
+
+<div class="logout-container">
+    <form action="{% url 'home:logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="logout-button">🚪 Chiqish</button>
+    </form>
+</div>
+
+    <div class="post-container">
+        <h1>{{ post.title }}</h1>
+        <div class="post-meta">Published on: {{ post.publish|date:"F d, Y" }}</div>
+        <p>{{ post.body|safe }}</p>
+
+        <div class="share-buttons">
+            <p>Ulashish:</p>
+
+            <a href="https://t.me/share/url?url={{ post_url|urlencode }}&text={{ post|urlencode }}" target="_blank">
+                <img src="{% static 'icons/telegram.webp' %}" alt="Telegram">
+            </a>
+
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{ post_url|urlencode }}" target="_blank">
+                <img src="{% static 'icons/facebook.webp' %}" alt="Facebook">
+            </a>
+        </div>
+
+        <a href="/" class="back-button">← Back to Home</a>
+    </div>
+
+<div class="like-section" style="margin-top: 20px;">
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit" name="like" style="background-color: #ff4d4d; color: white;
+                    border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px; cursor: pointer;">
+                    ❤️ Like ({{ post.likes }})
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="comments-section">
+        <h2>Comments</h2>
+        {% for comment in comments %}
+            <div class="comment">
+                <p class="comment-author">{{ comment.name }} <span class="comment-date">{{ comment.created_on }}</span></p>
+                <p class="comment-body">{{ comment.body | linebreaks }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% load crispy_forms_tags %}
+    <div class="comments-section">
+        <h2>Leave a Comment</h2>
+        <form method="post" class="comment-form">
+            {{ comment_form | crispy }}
+            {% csrf_token %}
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+</body>
+</html>
