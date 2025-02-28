@@ -7,7 +7,6 @@ SECRET_KEY = 'django-insecure-*vvxs!(5c&vd7!twmajrd0&i!u@ifnjhj_o6=o!xl9#n9gk4qe
 
 DEBUG = True
 
-# ALLOWED_HOSTS ro'yxatiga domeningizni qo'shish
 ALLOWED_HOSTS = [
     "blog-post-site-4ih6.onrender.com",
     "127.0.0.1",
@@ -37,6 +36,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    ' Whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
