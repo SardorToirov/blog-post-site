@@ -5,12 +5,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-*vvxs!(5c&vd7!twmajrd0&i!u@ifnjhj_o6=o!xl9#n9gk4qe'
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
-    "blog-post-site-4ih6.onrender.com",
+    "blog-post-site-qk2y.onrender.com",
     "127.0.0.1",
-    "localhost",
+    "localhost"
 ]
 
 INSTALLED_APPS = [
@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'crispy_forms',
     'crispy_bootstrap4',
+    'whitenoise.runserver_nostatic',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
