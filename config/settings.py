@@ -62,12 +62,15 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-# Ma'lumotlar bazasi sozlamalari
-DATABASE_URL = os.getenv("DATABASE_URL")
+import dj_database_url
+import os
+
+DATABASE_URL = os.getenv("DATABASE_URL")  # Muhit o‘zgaruvchisini olish
+
 DATABASES = {
     'default': dj_database_url.parse(DATABASE_URL) if DATABASE_URL else {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
