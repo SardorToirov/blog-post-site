@@ -12,7 +12,7 @@ load_dotenv(BASE_DIR / '.env')
 SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')
 DEBUG = os.getenv('DEBUG')
 
-ALLOWED_HOSTS = os.getenv('blog-post-site-sazp.onrender.com', '127.0.0.1,localhost').split(',')
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS").split(',')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
