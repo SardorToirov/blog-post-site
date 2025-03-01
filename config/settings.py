@@ -10,9 +10,9 @@ load_dotenv(BASE_DIR / '.env')
 
 # Muhit o‘zgaruvchilarini yuklash
 SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')
-DEBUG = os.getenv('DEBUG', 'False').lower() in ['true', '1', 't']
+DEBUG = os.getenv('DEBUG')
 
-ALLOWED_HOSTS = os.getenv('https://blog-post-site-sazp.onrender.com', '127.0.0.1,localhost').split(',')
+ALLOWED_HOSTS = os.getenv('blog-post-site-sazp.onrender.com', '127.0.0.1,localhost').split(',')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
