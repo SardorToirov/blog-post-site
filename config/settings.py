@@ -4,7 +4,10 @@ import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-*vvxs!(5c&vd7!twmajrd0&i!u@ifnjhj_o6=o!xl9#n9gk4qe')
+from dotenv import load_dotenv
+
+load_dotenv()
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
@@ -65,10 +68,10 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'first_db',
+        'NAME': 'first_db_8i9r',
         'USER': 'posgre',
-        'PASSWORD': '1213',
-        'HOST': '127.0.0.1',
+        'PASSWORD': 'V6r9gGVaQILxCka92xCWqidOxSuMyktx',
+        'HOST': 'dpg-cv0pc2vnoe9s73em6dt0-a',
         'PORT': '5432',
     }
 }
