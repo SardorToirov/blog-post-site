@@ -64,15 +64,22 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-# PostgreSQL bazasini ishlatish uchun
+# # PostgreSQL bazasini ishlatish uchun
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'first_db',
+#         'USER': 'posgre',
+#         'PASSWORD': '1213',
+#         'HOST': '127.0.0.1',
+#         'PORT': '5432',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'first_db_8i9r',
-        'USER': 'posgre',
-        'PASSWORD': 'V6r9gGVaQILxCka92xCWqidOxSuMyktx',
-        'HOST': 'dpg-cv0pc2vnoe9s73em6dt0-a',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
