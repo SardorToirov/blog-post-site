@@ -1,7 +1,6 @@
 from pathlib import Path
 import os
 from dotenv import load_dotenv
-import dj_database_url
 
 # Bazaviy katalogni olish
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -62,15 +61,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-import dj_database_url
-import os
-
-DATABASE_URL = os.getenv("DATABASE_URL")  # Muhit o‘zgaruvchisini olish
-
 DATABASES = {
-    'default': dj_database_url.parse(DATABASE_URL) if DATABASE_URL else {
+    'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
