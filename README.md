@@ -1,19 +1,19 @@
-# 📝 Blog Post – Django ilovasi
+# 📝 Blog Post – A Django Web Application
 
-Bu **Django** framework asosida yozilgan **Blog tizimi** bo‘lib, foydalanuvchilarga maqolalar yaratish, o‘qish va tahrirlash imkonini beradi.  
+This is a **Blog System** built using the **Django framework**, allowing users to create, read, and edit posts easily.  
 
-> 🚀 **Ma'lumotlar bazasi**: SQLite  
+> 🚀 **Database**: SQLite  
 > 🎨 **Frontend**: Bootstrap, Django Templates  
 > 🔧 **Backend**: Django, Python  
 
 ---
 
-## 📌 **Loyihani ishga tushirish**  
+## 📌 **Getting Started**  
 
-Loyihani kompyuterga yuklab olib, ishlatish uchun quyidagi bosqichlarni bajaring:  
+To run this project on your local machine, follow these steps:  
 
-### 1️⃣ **Kodlarni yuklash**
-Loyihani GitHub'dan yuklab olish uchun:
+### 1️⃣ **Clone the Repository**
+Download the project from GitHub:
 ```bash
 git clone https://github.com/username/blog.git
 cd blog
