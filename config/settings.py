@@ -8,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-*vvxs!(5c&vd7!twmajrd0&i!u@ifnjhj_o6=o!xl9#n9gk4qe'
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','localhost']
+ALLOWED_HOSTS = ['blog-post-site-t5t1.onrender.com','localhost']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
