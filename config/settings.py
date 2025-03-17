@@ -5,15 +5,10 @@ from dotenv import load_dotenv
 # Bazaviy katalogni olish
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# .env faylni yuklash
-load_dotenv(BASE_DIR / '.env')
+SECRET_KEY = 'django-insecure-*vvxs!(5c&vd7!twmajrd0&i!u@ifnjhj_o6=o!xl9#n9gk4qe'
+DEBUG = True
 
-# Muhit o‘zgaruvchilarini yuklash
-SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')
-DEBUG = os.getenv('DEBUG')
-
-# ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS").split(',')
-ALLOWED_HOSTS = ['blog-post-site-sazp.onrender.com','127.0.0.1','localhost']
+ALLOWED_HOSTS = ['127.0.0.1','localhost']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
